@@ -25,6 +25,7 @@ rule2.minute = 15;
 
 
 schedule.scheduleJob(rule1, () => {
+  console.log('token schedule running')
   tokenChange()
 })
 
