@@ -15,7 +15,8 @@ server.listen(port, () => {
 
 const rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(1, 5)]
-rule.hour = 8;
+rule.hour = 7;
+rule.minute = 15;
 
 schedule.scheduleJob(rule, () => {
   tokenChange()
