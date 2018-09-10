@@ -6,7 +6,7 @@ const tokenChange = () => {
     console.log(res.error || res.access_token)
     if(!res.error) {
       const token = res.access_token;
-      fs.writeFile('./token.json', `{"token":"${token}"}`, (err) => {
+      fs.writeFile('token.json', `{"token":"${token}"}`, (err) => {
         console.log(err ? err : '토큰 변경 완료')
       })
     }
