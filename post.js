@@ -12,9 +12,9 @@ const post = (today) => {
 
   console.log(lunch)
 
-  // FB.api('/932244020305222/feed', 'post', { message: lunch}, (res) => {
-  //   console.log(!!res.error ? res.error : 'done!')
-  // })
+  FB.api('/932244020305222/feed', 'post', { message: lunch}, (res) => {
+    console.log(!!res.error ? res.error : 'done!')
+  })
 }
 
 module.exports = post
