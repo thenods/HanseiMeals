@@ -12,14 +12,23 @@ const port = 3000
 server.listen(port, () => {
   console.log(`server started on ${port}`)
 })
+// 토큰 변경
+const rule1 = new schedule.RecurrenceRule();
+rule1.minute = 30;
 
-const rule = new schedule.RecurrenceRule();
-rule.dayOfWeek = [0, new schedule.Range(1, 5)]
-rule.hour = 7;
-rule.minute = 15;
+// 급식 올리기
+const rule2 = new schedule.RecurrenceRule();
+rule2.dayOfWeek = [0, new schedule.Range(1, 5)]
+rule2.hour = 7;
+rule2.minute = 15;
 
-schedule.scheduleJob(rule, () => {
+
+
+schedule.scheduleJob(rule1, () => {
   tokenChange()
+})
+
+schedule.scheduleJob(rule2, () => {
   const date = new Date()
 
   const todayforlog = `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`
