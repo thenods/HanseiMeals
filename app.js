@@ -17,7 +17,7 @@ const rule = new schedule.RecurrenceRule();
 rule.dayOfWeek = [0, new schedule.Range(1, 5)]
 rule.hour = 8;
 
-schedule.scheduleJob(rule, () => {
+// schedule.scheduleJob(rule, () => {
   tokenChange()
   const date = new Date()
 
@@ -51,4 +51,4 @@ schedule.scheduleJob(rule, () => {
       post(today[0])
     }
   })
-})
+// })
