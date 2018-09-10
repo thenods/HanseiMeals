@@ -14,7 +14,7 @@ server.listen(port, () => {
 })
 // 토큰 변경
 const rule1 = new schedule.RecurrenceRule();
-rule1.second = 30;
+rule1.minute = 30;
 
 // 급식 올리기
 const rule2 = new schedule.RecurrenceRule();
