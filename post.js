@@ -7,8 +7,10 @@ FB.setAccessToken(token);
 console.log('토큰 설정 완료', token)
 
 const post = (today) => {
-  const lunch = today.lunch ? today.lunch.replace(/,/gi, '\n') : '급식 없는 날(행복)'
+  let lunch = today.lunch ? today.lunch.replace(/,/gi, '\n') : '급식 없는 날(행복)'
   
+  lunch = lunch.replace(/./gi, ' ')
+
   console.log(lunch)
 
   FB.api('/932244020305222/feed', 'post', { message: lunch}, (res) => {
